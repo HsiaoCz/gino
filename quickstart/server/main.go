@@ -11,5 +11,6 @@ func main() {
 }
 
 func userHandle(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(r.URL)
 	fmt.Fprintln(w, "hello")
 }
