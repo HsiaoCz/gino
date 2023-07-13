@@ -92,3 +92,12 @@ func queryForm(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, hello)
 	fmt.Fprintln(w, hi)
 }
+
+// postform 只会解析表单数据
+// 属于http.url.Values类型，本质为map[string][]string类型
+// formValue 将r.ParseForm和form.Get()两步合并成了一步
+// PostFormValue(key string)string 返回[]string的第一个值
+
+// MultipartForm字段
+// 为了获取mulyipart/data编码的表单数据，我们需要使用Request结构的ParseMultipartForm方法和MultipartForm字段
+// 通常上传文件的时候会将form表单的enctype属性设置为multipart/form-data
